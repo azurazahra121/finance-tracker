@@ -434,7 +434,7 @@ function CategoryBarChart({ entries }) {
       type: "bar",
       data: {
         labels: data.map(d => d[0]),
-        datasets: [{ data: data.map(d => d[1]), backgroundColor: C.violet, borderRadius: 6, maxBarThickness: 20 }],
+        datasets: [{ data: data.map(d => d[1]), backgroundColor: C.coral, borderRadius: 6, maxBarThickness: 20 }],
       },
       options: {
         indexAxis: "y",
