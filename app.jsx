@@ -226,7 +226,11 @@ function LoginHistory({ userId, onBack }) {
 
 function RecurringScreen({ userId, onBack, onLogged }) {
   const [rows, setRows] = React.useState(null);
-  const [form, setForm] = React.useState({ type: "expense", category: "", amount: "", frequency: "monthly", next_due_date: new Date().toISOString().split("T")[0] });
+  const [form, setForm] = React.useState({ 
+  type: "expense", category: "", amount: "", frequency: "monthly", 
+  next_due_date: new Date().toISOString().split("T")[0],
+  note: ""  // ← Add this
+  });
   const [showForm, setShowForm] = React.useState(false);
 
   const load = () => db.from("recurring_transactions").select("*").eq("user_id", userId).eq("active", true).order("next_due_date").then(({ data }) => setRows(data || []));
